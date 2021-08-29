@@ -1,7 +1,13 @@
-##Script to display expiration date of ABRCA_Root CA in every ProxySG
+##########################################################################################
+##### ProxySG ABRCA Roo CA Check Tool                                                #####
+##### This tool is used to display expiration date of ABRCA_Root CA in ProxySG       #####
+##### Initial Version 0.1  - Rich Diocales   30 Aug 2021                             #####
+##########################################################################################
+
 cls
 echo "`n"
 echo "This is a simple powershell script to extract certificate details of Symantec's ABRCA Root Details"
+echo "The list of proxies to check are listed in the proxylist.txt file `n"
 
 $ASAUser = Read-Host -Prompt 'Input the user name'
 $securePwd = Read-Host "Enter password" -AsSecureString
@@ -21,7 +27,7 @@ echo "show hostname" >>unicode.txt
 echo "show ssl summary ca-certificate ABRCA_root" >>unicode.txt
 echo exit >>unicode.txt
 echo exit >>unicode.txt
-
+echo "`n"
  
 #Converts the file to ASCII format (separate file)#
 $lines = gc "unicode.txt"
